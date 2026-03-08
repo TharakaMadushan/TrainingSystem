@@ -132,33 +132,33 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         <div className="flex h-screen overflow-hidden">
             {/* Sidebar */}
             <aside
-                className="fixed left-0 top-0 h-full z-40 flex flex-col border-r"
+                className="fixed left-0 top-0 h-full z-40 flex flex-col"
                 style={{
                     width: sidebarCollapsed ? 72 : 260,
                     transform: (isDesktop || mobileMenuOpen) ? 'translateX(0)' : 'translateX(-100%)',
                     transition: 'all 0.3s ease',
-                    background: 'var(--color-bg-sidebar)',
-                    borderColor: 'var(--color-border-default)',
+                    background: '#0f172a',
+                    borderRight: '1px solid #1e293b',
                 }}
             >
                 {/* Logo */}
                 <div
-                    className="flex items-center gap-3 px-4 border-b"
+                    className="flex items-center gap-3 px-4"
                     style={{
                         height: 64,
-                        borderColor: 'var(--color-border-default)',
+                        borderBottom: '1px solid #1e293b',
                     }}
                 >
                     <div className="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-white text-sm"
-                        style={{ background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)' }}>
+                        style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6)' }}>
                         TR
                     </div>
                     {!sidebarCollapsed && (
                         <div className="animate-fadeIn">
-                            <div className="font-semibold text-sm" style={{ color: 'var(--color-text-primary)' }}>
+                            <div className="font-semibold text-sm" style={{ color: '#f1f5f9' }}>
                                 TRDS
                             </div>
-                            <div className="text-[11px]" style={{ color: 'var(--color-text-muted)' }}>
+                            <div className="text-[11px]" style={{ color: '#64748b' }}>
                                 Training System
                             </div>
                         </div>
@@ -183,11 +183,11 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                                                 isActive ? 'text-blue-600' : ''
                                             )}
                                             style={{
-                                                color: isActive ? 'var(--color-accent-primary)' : 'var(--color-text-secondary)',
-                                                background: isActive ? 'var(--color-bg-active)' : 'transparent',
+                                                color: isActive ? '#a5b4fc' : '#94a3b8',
+                                                background: isActive ? 'rgba(99, 102, 241, 0.15)' : 'transparent',
                                             }}
                                             onMouseEnter={(e) => {
-                                                if (!isActive) e.currentTarget.style.background = 'var(--color-bg-hover)';
+                                                if (!isActive) e.currentTarget.style.background = 'rgba(255, 255, 255, 0.06)';
                                             }}
                                             onMouseLeave={(e) => {
                                                 if (!isActive) e.currentTarget.style.background = 'transparent';
@@ -208,11 +208,11 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                                                 'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all'
                                             )}
                                             style={{
-                                                color: isActive ? 'var(--color-accent-primary)' : 'var(--color-text-secondary)',
-                                                background: isActive ? 'var(--color-bg-active)' : 'transparent',
+                                                color: isActive ? '#a5b4fc' : '#94a3b8',
+                                                background: isActive ? 'rgba(99, 102, 241, 0.15)' : 'transparent',
                                             }}
                                             onMouseEnter={(e) => {
-                                                if (!isActive) e.currentTarget.style.background = 'var(--color-bg-hover)';
+                                                if (!isActive) e.currentTarget.style.background = 'rgba(255, 255, 255, 0.06)';
                                             }}
                                             onMouseLeave={(e) => {
                                                 if (!isActive) e.currentTarget.style.background = 'transparent';
@@ -234,11 +234,11 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                                                         href={child.route || '#'}
                                                         className="block px-3 py-2 rounded-md text-[13px] transition-all"
                                                         style={{
-                                                            color: childActive ? 'var(--color-accent-primary)' : 'var(--color-text-muted)',
-                                                            background: childActive ? 'var(--color-bg-active)' : 'transparent',
+                                                            color: childActive ? '#a5b4fc' : '#64748b',
+                                                            background: childActive ? 'rgba(99, 102, 241, 0.1)' : 'transparent',
                                                         }}
                                                         onMouseEnter={(e) => {
-                                                            if (!childActive) e.currentTarget.style.background = 'var(--color-bg-hover)';
+                                                            if (!childActive) e.currentTarget.style.background = 'rgba(255, 255, 255, 0.04)';
                                                         }}
                                                         onMouseLeave={(e) => {
                                                             if (!childActive) e.currentTarget.style.background = 'transparent';
@@ -258,14 +258,14 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
                 {/* Sidebar Footer */}
                 <div
-                    className="px-3 py-3 border-t"
-                    style={{ borderColor: 'var(--color-border-default)' }}
+                    className="px-3 py-3"
+                    style={{ borderTop: '1px solid #1e293b' }}
                 >
                     <button
                         onClick={handleLogout}
                         className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all"
-                        style={{ color: 'var(--color-accent-danger)' }}
-                        onMouseEnter={(e) => (e.currentTarget.style.background = '#fee2e2')}
+                        style={{ color: '#f87171' }}
+                        onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(239, 68, 68, 0.1)')}
                         onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
                     >
                         <LogOut size={18} />
@@ -348,7 +348,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                         <div className="flex items-center gap-3 ml-2 pl-3 border-l" style={{ borderColor: 'var(--color-border-default)' }}>
                             <div
                                 className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-semibold"
-                                style={{ background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)' }}
+                                style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6)' }}
                             >
                                 {user?.employeeName?.charAt(0)?.toUpperCase() || 'U'}
                             </div>

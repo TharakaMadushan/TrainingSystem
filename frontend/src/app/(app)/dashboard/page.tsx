@@ -243,9 +243,9 @@ export default function DashboardPage() {
 
             {/* Stats Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 animate-stagger">
-                <StatCard title="Pending Tasks" value={5} icon={<ClipboardCheck size={22} />} color="#3b82f6" gradient="linear-gradient(135deg, #3b82f6, #2563eb)" change="+2 this week" changeType="up" />
+                <StatCard title="Pending Tasks" value={5} icon={<ClipboardCheck size={22} />} color="#6366f1" gradient="linear-gradient(135deg, #6366f1, #4f46e5)" change="+2 this week" changeType="up" />
                 <StatCard title="Completed" value={12} icon={<CheckCircle size={22} />} color="#10b981" gradient="linear-gradient(135deg, #10b981, #059669)" change="+3 this month" changeType="up" />
-                <StatCard title="Overdue" value={2} icon={<AlertTriangle size={22} />} color="#ef4444" gradient="linear-gradient(135deg, #f59e0b, #d97706)" change="Requires attention" changeType="down" />
+                <StatCard title="Overdue" value={2} icon={<AlertTriangle size={22} />} color="#f59e0b" gradient="linear-gradient(135deg, #f59e0b, #d97706)" change="Requires attention" changeType="down" />
                 <StatCard title="Compliance" value="87%" icon={<TrendingUp size={22} />} color="#8b5cf6" gradient="linear-gradient(135deg, #8b5cf6, #7c3aed)" change="+5% from last month" changeType="up" />
             </div>
 
