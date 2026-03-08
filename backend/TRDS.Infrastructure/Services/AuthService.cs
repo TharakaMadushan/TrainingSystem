@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using BCrypt.Net;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -59,8 +60,7 @@ public class AuthService : IAuthService
             return new LoginResponse { Success = false, ErrorMessage = "Account is locked. Please try again later." };
         }
 
-        var passwordHash = HashPassword(request.Password, user.Salt);
-        if (passwordHash != user.PasswordHash)
+        if (!VerifyPassword(request.Password, user.PasswordHash, user.Salt, user))
         {
             user.FailedLoginAttempts++;
             if (user.FailedLoginAttempts >= 5)
@@ -299,11 +299,39 @@ public class AuthService : IAuthService
 
     private string HashPassword(string password, string salt)
     {
+        // BCrypt hashing (salt is embedded in the hash)
+        return BCrypt.Net.BCrypt.HashPassword(password, workFactor: 12);
+    }
+
+    /// <summary>
+    /// Verifies password against stored hash. Supports both BCrypt (new) and SHA256 (legacy).
+    /// If legacy SHA256 hash matches, auto-upgrades to BCrypt.
+    /// </summary>
+    private bool VerifyPassword(string password, string storedHash, string salt, Core.Entities.SecurityUser? user = null)
+    {
+        // Try BCrypt first (new format starts with $2)
+        if (storedHash.StartsWith("$2"))
+        {
+            return BCrypt.Net.BCrypt.Verify(password, storedHash);
+        }
+
+        // Fallback: legacy SHA256 check
         using var sha256 = SHA256.Create();
-        // Use Unicode (UTF-16LE) encoding to match SQL Server HASHBYTES with NVARCHAR
         var bytes = Encoding.Unicode.GetBytes(password + salt);
         var hash = sha256.ComputeHash(bytes);
-        return BitConverter.ToString(hash).Replace("-", "").ToUpperInvariant();
+        var sha256Hash = BitConverter.ToString(hash).Replace("-", "").ToUpperInvariant();
+
+        if (sha256Hash == storedHash)
+        {
+            // Auto-upgrade to BCrypt on successful legacy login
+            if (user != null)
+            {
+                user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(password, workFactor: 12);
+            }
+            return true;
+        }
+
+        return false;
     }
 
     private async Task LogLoginAttempt(string userType, string username, string ipAddress, string userAgent, bool success, string? failureReason)

@@ -22,29 +22,33 @@ builder.Services.AddScoped<DashboardQueryService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ITrainingService, TrainingService>();
 builder.Services.AddScoped<IAssignmentService, AssignmentService>();
-// Register remaining services as they are implemented
 builder.Services.AddScoped<IDashboardService, DashboardService>();
-// builder.Services.AddScoped<IApprovalService, ApprovalService>();
-// builder.Services.AddScoped<IScheduleService, ScheduleService>();
-// builder.Services.AddScoped<IEmployeeService, EmployeeService>();
-// builder.Services.AddScoped<INotificationService, NotificationService>();
-// builder.Services.AddScoped<IReportService, ReportService>();
-// builder.Services.AddScoped<IAuditService, AuditService>();
-// builder.Services.AddScoped<IUserManagementService, UserManagementService>();
-// builder.Services.AddScoped<IRoleManagementService, RoleManagementService>();
-// builder.Services.AddScoped<IMenuService, MenuService>();
-// builder.Services.AddScoped<ICertificateService, CertificateService>();
-// builder.Services.AddScoped<ISettingsService, SettingsService>();
+builder.Services.AddScoped<IApprovalService, ApprovalService>();
+builder.Services.AddScoped<IScheduleService, ScheduleService>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
+builder.Services.AddScoped<IReportService, ReportService>();
+builder.Services.AddScoped<IAuditService, AuditService>();
+builder.Services.AddScoped<IUserManagementService, UserManagementService>();
+builder.Services.AddScoped<IRoleManagementService, RoleManagementService>();
+builder.Services.AddScoped<IMenuService, MenuService>();
+builder.Services.AddScoped<ICertificateService, CertificateService>();
+builder.Services.AddScoped<ISettingsService, SettingsService>();
+builder.Services.AddScoped<IScopeFilterService, ScopeFilterService>();
 
 // ========== Authentication ==========
+// JWT key: reads from env var JWT_SECRET_KEY first, falls back to appsettings
+var jwtKey = Environment.GetEnvironmentVariable("JWT_SECRET_KEY")
+    ?? builder.Configuration["Jwt:Key"]
+    ?? throw new InvalidOperationException("JWT signing key not configured. Set JWT_SECRET_KEY env var or Jwt:Key in appsettings.");
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)),
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
             ValidateIssuer = true,
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidateAudience = true,
@@ -56,12 +60,15 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-// ========== CORS ==========
+// ========== CORS (configurable via appsettings) ==========
+var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()
+    ?? new[] { "http://localhost:3000", "http://localhost:5173" };
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:3000", "http://localhost:5173")
+        policy.WithOrigins(allowedOrigins)
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
@@ -73,6 +80,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// ========== Health Check ==========
+builder.Services.AddHealthChecks();
+
 var app = builder.Build();
 
 // ========== Middleware Pipeline ==========
@@ -81,11 +91,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+else
+{
+    // HTTPS enforcement in non-development environments
+    app.UseHttpsRedirection();
+    app.UseHsts();
+}
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseCors("AllowFrontend");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+app.MapHealthChecks("/health");
 
 app.Run();

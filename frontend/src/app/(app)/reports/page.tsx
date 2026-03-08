@@ -1,67 +1,80 @@
 'use client';
-import { BarChart3, Download, CalendarDays, TrendingUp, Users, FileText } from 'lucide-react';
+import { useState } from 'react';
+import api from '@/lib/api';
+import { BarChart3, Loader2, Download } from 'lucide-react';
 
-const reportTypes = [
-    { id: 'training-summary', name: 'Training Summary Report', desc: 'Overview of all training programs, completion rates, and trends', icon: <BarChart3 size={20} />, gradient: 'linear-gradient(135deg, #3b82f6, #2563eb)' },
-    { id: 'compliance', name: 'Compliance Report', desc: 'Mandatory training compliance status by department', icon: <TrendingUp size={20} />, gradient: 'linear-gradient(135deg, #10b981, #059669)' },
-    { id: 'employee-progress', name: 'Employee Progress Report', desc: 'Individual employee training progress and achievements', icon: <Users size={20} />, gradient: 'linear-gradient(135deg, #8b5cf6, #7c3aed)' },
-    { id: 'attendance', name: 'Attendance Report', desc: 'Training session attendance records and statistics', icon: <CalendarDays size={20} />, gradient: 'linear-gradient(135deg, #f59e0b, #d97706)' },
-    { id: 'assessment', name: 'Assessment Report', desc: 'Quiz and assessment results with pass/fail analysis', icon: <FileText size={20} />, gradient: 'linear-gradient(135deg, #ec4899, #be185d)' },
-    { id: 'audit', name: 'Audit Trail Report', desc: 'System activity logs and user action history', icon: <FileText size={20} />, gradient: 'linear-gradient(135deg, #64748b, #475569)' },
-];
-
-const recentReports = [
-    { name: 'Compliance_Q1_2025.xlsx', date: '2025-03-05', type: 'Compliance', size: '245 KB' },
-    { name: 'Training_Summary_Feb.pdf', date: '2025-03-01', type: 'Training Summary', size: '1.2 MB' },
-    { name: 'Employee_Progress_March.xlsx', date: '2025-02-28', type: 'Employee Progress', size: '580 KB' },
-];
+interface ReportColumn { key: string; label: string; type: string; }
+interface ReportData { reportTitle: string; rows: Record<string, unknown>[]; columns: ReportColumn[]; summary: Record<string, unknown> | null; }
 
 export default function ReportsPage() {
+    const [report, setReport] = useState<ReportData | null>(null);
+    const [loading, setLoading] = useState(false);
+    const [reportType, setReportType] = useState('TrainingCompletion');
+
+    const generate = async () => {
+        setLoading(true);
+        try {
+            const res = await api.post('/report', { reportType, dateFrom: null, dateTo: null });
+            setReport(res.data.data);
+        } catch { setReport(null); }
+        setLoading(false);
+    };
+
     return (
         <div className="space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                <div>
-                    <h1 className="text-2xl font-bold" style={{ color: 'var(--color-text-primary)' }}>Reports & Analytics</h1>
-                    <p className="text-sm mt-1" style={{ color: 'var(--color-text-muted)' }}>Generate and download training reports</p>
-                </div>
+            <div>
+                <h1 className="text-2xl font-bold" style={{ color: 'var(--color-text-primary)' }}>Reports</h1>
+                <p className="text-sm mt-1" style={{ color: 'var(--color-text-muted)' }}>Generate and view training reports</p>
+            </div>
+            <div className="card p-4 flex flex-col sm:flex-row gap-3">
+                <select className="input-field flex-1" value={reportType} onChange={e => setReportType(e.target.value)}>
+                    <option value="TrainingCompletion">Training Completion Report</option>
+                    <option value="General">General Training Report</option>
+                </select>
+                <button onClick={generate} disabled={loading} className="btn-primary text-sm">
+                    {loading ? <Loader2 size={14} className="animate-spin inline mr-1" /> : <BarChart3 size={14} className="inline mr-1" />}
+                    Generate Report
+                </button>
             </div>
 
-            {/* Report Types Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-stagger">
-                {reportTypes.map((r) => (
-                    <div key={r.id} className="card p-5 card-interactive cursor-pointer">
-                        <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white mb-4" style={{ background: r.gradient }}>
-                            {r.icon}
-                        </div>
-                        <h3 className="text-sm font-semibold mb-1" style={{ color: 'var(--color-text-primary)' }}>{r.name}</h3>
-                        <p className="text-xs mb-4" style={{ color: 'var(--color-text-muted)' }}>{r.desc}</p>
-                        <button className="btn-secondary text-xs w-full justify-center">
-                            <BarChart3 size={14} /> Generate Report
-                        </button>
+            {report && (
+                <div className="card overflow-hidden animate-stagger">
+                    <div className="p-4 flex justify-between items-center" style={{ borderBottom: '1px solid var(--color-border-default)' }}>
+                        <h2 className="text-lg font-semibold" style={{ color: 'var(--color-text-primary)' }}>{report.reportTitle}</h2>
                     </div>
-                ))}
-            </div>
-
-            {/* Recent Reports */}
-            <div className="card p-5">
-                <h3 className="font-semibold text-sm mb-4" style={{ color: 'var(--color-text-primary)' }}>Recent Reports</h3>
-                <div className="space-y-3">
-                    {recentReports.map((r, idx) => (
-                        <div key={idx} className="flex items-center justify-between p-3 rounded-lg" style={{ background: 'var(--color-bg-secondary)' }}>
-                            <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: '#dbeafe', color: '#2563eb' }}>
-                                    <FileText size={16} />
+                    {report.summary && (
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4" style={{ background: 'var(--color-bg-secondary)' }}>
+                            {Object.entries(report.summary).map(([k, v]) => (
+                                <div key={k} className="text-center">
+                                    <div className="text-xl font-bold" style={{ color: 'var(--color-accent-primary)' }}>{String(v)}</div>
+                                    <div className="text-xs mt-1" style={{ color: 'var(--color-text-muted)' }}>{k.replace(/([A-Z])/g, ' $1').trim()}</div>
                                 </div>
-                                <div>
-                                    <p className="text-sm font-medium" style={{ color: 'var(--color-text-primary)' }}>{r.name}</p>
-                                    <p className="text-[11px]" style={{ color: 'var(--color-text-muted)' }}>{r.type} · {r.date} · {r.size}</p>
-                                </div>
-                            </div>
-                            <button className="btn-secondary text-xs"><Download size={14} /></button>
+                            ))}
                         </div>
-                    ))}
+                    )}
+                    <div className="overflow-x-auto">
+                        <table className="w-full">
+                            <thead><tr style={{ background: 'var(--color-bg-secondary)' }}>
+                                {report.columns.map(c => (
+                                    <th key={c.key} className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider"
+                                        style={{ color: 'var(--color-text-muted)', borderBottom: '1px solid var(--color-border-default)' }}>{c.label}</th>
+                                ))}
+                            </tr></thead>
+                            <tbody>
+                                {report.rows.map((row, i) => (
+                                    <tr key={i} style={{ borderBottom: '1px solid var(--color-border-light)' }}>
+                                        {report.columns.map(c => (
+                                            <td key={c.key} className="px-4 py-3 text-sm" style={{ color: 'var(--color-text-primary)' }}>
+                                                {c.type === 'percent' ? `${row[c.key]}%` : String(row[c.key] ?? '—')}
+                                            </td>
+                                        ))}
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 }
