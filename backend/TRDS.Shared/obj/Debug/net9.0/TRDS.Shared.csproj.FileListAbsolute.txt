@@ -10,3 +10,4 @@ Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Shared\obj\Debug\n
 Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Shared\obj\Debug\net9.0\refint\TRDS.Shared.dll
 Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Shared\obj\Debug\net9.0\TRDS.Shared.pdb
 Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Shared\obj\Debug\net9.0\ref\TRDS.Shared.dll
+z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Shared\obj\Debug\net9.0\TRDS.Shared.sourcelink.json

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Hc+IuMYMNKw=",
+  "dgSpecHash": "PTpslp9RdK4=",
   "success": true,
-  "projectFilePath": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.API\\TRDS.API.csproj",
+  "projectFilePath": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.API\\TRDS.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Madushan\\.nuget\\packages\\azure.core\\1.50.0\\azure.core.1.50.0.nupkg.sha512",
     "C:\\Users\\Madushan\\.nuget\\packages\\azure.identity\\1.17.1\\azure.identity.1.17.1.nupkg.sha512",

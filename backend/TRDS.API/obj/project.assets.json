@@ -2494,11 +2494,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.API\\TRDS.API.csproj",
+      "projectUniqueName": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.API\\TRDS.API.csproj",
       "projectName": "TRDS.API",
-      "projectPath": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.API\\TRDS.API.csproj",
+      "projectPath": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.API\\TRDS.API.csproj",
       "packagesPath": "C:\\Users\\Madushan\\.nuget\\packages\\",
-      "outputPath": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.API\\obj\\",
+      "outputPath": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
@@ -2523,17 +2523,17 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Application\\TRDS.Application.csproj": {
-              "projectPath": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Application\\TRDS.Application.csproj"
+            "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Application\\TRDS.Application.csproj": {
+              "projectPath": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Application\\TRDS.Application.csproj"
             },
-            "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Core\\TRDS.Core.csproj": {
-              "projectPath": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Core\\TRDS.Core.csproj"
+            "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Core\\TRDS.Core.csproj": {
+              "projectPath": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Core\\TRDS.Core.csproj"
             },
-            "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Infrastructure\\TRDS.Infrastructure.csproj": {
-              "projectPath": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Infrastructure\\TRDS.Infrastructure.csproj"
+            "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Infrastructure\\TRDS.Infrastructure.csproj": {
+              "projectPath": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Infrastructure\\TRDS.Infrastructure.csproj"
             },
-            "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj": {
-              "projectPath": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj"
+            "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj": {
+              "projectPath": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj"
             }
           }
         }

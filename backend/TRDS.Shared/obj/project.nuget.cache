@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9Von3MtcZj0=",
+  "dgSpecHash": "1R0PN2mSsiQ=",
   "success": true,
-  "projectFilePath": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj",
+  "projectFilePath": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Madushan\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Madushan\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",

@@ -15,3 +15,4 @@ Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\obj\De
 Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\obj\Debug\net9.0\refint\TRDS.Application.dll
 Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\obj\Debug\net9.0\TRDS.Application.pdb
 Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\obj\Debug\net9.0\ref\TRDS.Application.dll
+z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\obj\Debug\net9.0\TRDS.Application.sourcelink.json

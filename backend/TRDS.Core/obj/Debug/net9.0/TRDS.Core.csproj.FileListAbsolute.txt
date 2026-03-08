@@ -13,3 +13,4 @@ Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Core\obj\Debug\net
 Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Core\obj\Debug\net9.0\refint\TRDS.Core.dll
 Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Core\obj\Debug\net9.0\TRDS.Core.pdb
 Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Core\obj\Debug\net9.0\ref\TRDS.Core.dll
+z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Core\obj\Debug\net9.0\TRDS.Core.sourcelink.json

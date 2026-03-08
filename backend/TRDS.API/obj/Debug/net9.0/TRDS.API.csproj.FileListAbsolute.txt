@@ -98,3 +98,4 @@ Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.API\obj\Debug\net9
 Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.API\obj\Debug\net9.0\TRDS.API.pdb
 Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.API\obj\Debug\net9.0\TRDS.API.genruntimeconfig.cache
 Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.API\obj\Debug\net9.0\ref\TRDS.API.dll
+z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.API\obj\Debug\net9.0\TRDS.API.sourcelink.json

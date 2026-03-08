@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Infrastructure\\TRDS.Infrastructure.csproj": {}
+    "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Infrastructure\\TRDS.Infrastructure.csproj": {}
   },
   "projects": {
-    "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Core\\TRDS.Core.csproj": {
+    "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Core\\TRDS.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Core\\TRDS.Core.csproj",
+        "projectUniqueName": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Core\\TRDS.Core.csproj",
         "projectName": "TRDS.Core",
-        "projectPath": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Core\\TRDS.Core.csproj",
+        "projectPath": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Core\\TRDS.Core.csproj",
         "packagesPath": "C:\\Users\\Madushan\\.nuget\\packages\\",
-        "outputPath": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Core\\obj\\",
+        "outputPath": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
@@ -36,8 +36,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj": {
-                "projectPath": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj"
+              "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj": {
+                "projectPath": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj"
               }
             }
           }
@@ -77,14 +77,14 @@
         }
       }
     },
-    "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Infrastructure\\TRDS.Infrastructure.csproj": {
+    "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Infrastructure\\TRDS.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Infrastructure\\TRDS.Infrastructure.csproj",
+        "projectUniqueName": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Infrastructure\\TRDS.Infrastructure.csproj",
         "projectName": "TRDS.Infrastructure",
-        "projectPath": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Infrastructure\\TRDS.Infrastructure.csproj",
+        "projectPath": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Infrastructure\\TRDS.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Madushan\\.nuget\\packages\\",
-        "outputPath": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Infrastructure\\obj\\",
+        "outputPath": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
@@ -109,11 +109,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Core\\TRDS.Core.csproj": {
-                "projectPath": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Core\\TRDS.Core.csproj"
+              "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Core\\TRDS.Core.csproj": {
+                "projectPath": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Core\\TRDS.Core.csproj"
               },
-              "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj": {
-                "projectPath": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj"
+              "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj": {
+                "projectPath": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj"
               }
             }
           }
@@ -167,14 +167,14 @@
         }
       }
     },
-    "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj": {
+    "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj",
+        "projectUniqueName": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj",
         "projectName": "TRDS.Shared",
-        "projectPath": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj",
+        "projectPath": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\TRDS.Shared.csproj",
         "packagesPath": "C:\\Users\\Madushan\\.nuget\\packages\\",
-        "outputPath": "Z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\obj\\",
+        "outputPath": "z:\\Source\\New Attendance Solution - Testing\\TRDS\\backend\\TRDS.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TRDS.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc42d7021cdcf187c36db2d3ed8dc37d67f4abcb")]
 [assembly: System.Reflection.AssemblyProductAttribute("TRDS.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TRDS.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

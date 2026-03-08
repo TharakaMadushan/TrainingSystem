@@ -87,9 +87,17 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     const [expandedMenus, setExpandedMenus] = useState<Set<string>>(new Set());
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [notificationCount] = useState(3);
+    const [isDesktop, setIsDesktop] = useState(true);
 
     const isDark = preferences.themeMode === 'Dark';
     const navMenus = menuItems?.length > 0 ? menuItems : defaultMenu;
+
+    useEffect(() => {
+        const checkDesktop = () => setIsDesktop(window.innerWidth >= 1024);
+        checkDesktop();
+        window.addEventListener('resize', checkDesktop);
+        return () => window.removeEventListener('resize', checkDesktop);
+    }, []);
 
     useEffect(() => {
         if (!isAuthenticated) {
@@ -124,12 +132,11 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         <div className="flex h-screen overflow-hidden">
             {/* Sidebar */}
             <aside
-                className={clsx(
-                    'fixed left-0 top-0 h-full z-40 flex flex-col border-r transition-all duration-300',
-                    sidebarCollapsed ? 'w-[72px]' : 'w-[260px]',
-                    mobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
-                )}
+                className="fixed left-0 top-0 h-full z-40 flex flex-col border-r"
                 style={{
+                    width: sidebarCollapsed ? 72 : 260,
+                    transform: (isDesktop || mobileMenuOpen) ? 'translateX(0)' : 'translateX(-100%)',
+                    transition: 'all 0.3s ease',
                     background: 'var(--color-bg-sidebar)',
                     borderColor: 'var(--color-border-default)',
                 }}
@@ -138,7 +145,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                 <div
                     className="flex items-center gap-3 px-4 border-b"
                     style={{
-                        height: 'var(--topbar-height)',
+                        height: 64,
                         borderColor: 'var(--color-border-default)',
                     }}
                 >
@@ -277,16 +284,17 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
             {/* Main */}
             <div
-                className={clsx(
-                    'flex-1 flex flex-col transition-all duration-300',
-                    sidebarCollapsed ? 'lg:ml-[72px]' : 'lg:ml-[260px]'
-                )}
+                className="flex-1 flex flex-col"
+                style={{
+                    marginLeft: sidebarCollapsed ? 72 : 260,
+                    transition: 'margin-left 0.3s ease',
+                }}
             >
                 {/* Topbar */}
                 <header
                     className="sticky top-0 z-20 flex items-center justify-between px-6 border-b"
                     style={{
-                        height: 'var(--topbar-height)',
+                        height: 64,
                         background: 'var(--color-bg-primary)',
                         borderColor: 'var(--color-border-default)',
                     }}
