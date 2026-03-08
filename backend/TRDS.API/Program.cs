@@ -23,7 +23,7 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ITrainingService, TrainingService>();
 builder.Services.AddScoped<IAssignmentService, AssignmentService>();
 // Register remaining services as they are implemented
-// builder.Services.AddScoped<IDashboardService, DashboardService>();
+builder.Services.AddScoped<IDashboardService, DashboardService>();
 // builder.Services.AddScoped<IApprovalService, ApprovalService>();
 // builder.Services.AddScoped<IScheduleService, ScheduleService>();
 // builder.Services.AddScoped<IEmployeeService, EmployeeService>();

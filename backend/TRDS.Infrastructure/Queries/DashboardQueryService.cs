@@ -59,6 +59,42 @@ public class DashboardQueryService
         return stats;
     }
 
+    public async Task<TrainingStatDto> GetGlobalStatsAsync()
+    {
+        using var conn = CreateConnection();
+        var sql = @"
+            SELECT 
+                SUM(CASE WHEN tad.Status = 'NotStarted' THEN 1 ELSE 0 END) AS PendingCount,
+                SUM(CASE WHEN tad.Status = 'Overdue' THEN 1 ELSE 0 END) AS OverdueCount,
+                SUM(CASE WHEN tad.Status = 'Completed' THEN 1 ELSE 0 END) AS CompletedCount,
+                SUM(CASE WHEN tad.Status = 'InProgress' THEN 1 ELSE 0 END) AS InProgressCount,
+                COUNT(*) AS TotalAssigned,
+                CASE WHEN COUNT(*) > 0 
+                    THEN CAST(SUM(CASE WHEN tad.Status = 'Completed' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS DECIMAL(5,2))
+                    ELSE 0 END AS CompliancePercent,
+                0 AS PendingApprovals,
+                0 AS UpcomingSessions,
+                0 AS ExpiringCertificates
+            FROM [dbo].[TrainingAssignmentDetail] tad";
+
+        var stats = await conn.QueryFirstOrDefaultAsync<TrainingStatDto>(sql)
+                    ?? new TrainingStatDto();
+
+        // Get total upcoming sessions
+        var sessionsSql = @"
+            SELECT COUNT(*) FROM [dbo].[TrainingSchedule]
+            WHERE StartDateTime > GETDATE() AND Status = 'Scheduled'";
+        stats.UpcomingSessions = await conn.ExecuteScalarAsync<int>(sessionsSql);
+
+        // Get total pending approvals
+        var approvalSql = @"
+            SELECT COUNT(*) FROM [dbo].[TrainingApproval]
+            WHERE [Action] = 'Pending'";
+        stats.PendingApprovals = await conn.ExecuteScalarAsync<int>(approvalSql);
+
+        return stats;
+    }
+
     public async Task<TrainingStatDto> GetTeamStatsAsync(string managerEmployeeNo, List<string> teamEmployeeNos)
     {
         if (!teamEmployeeNos.Any()) return new TrainingStatDto();
