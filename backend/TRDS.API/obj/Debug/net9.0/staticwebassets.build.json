@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "xZyyUltsj7H/gdHI6lxqEDJfzvR2EE//fg4EOiZ0Zys=",
+  "Source": "TRDS.API",
+  "BasePath": "_content/TRDS.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

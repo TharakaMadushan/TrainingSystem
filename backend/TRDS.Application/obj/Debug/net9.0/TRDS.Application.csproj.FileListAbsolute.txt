@@ -1,0 +1,17 @@
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\obj\Debug\net9.0\TRDS.Application.csproj.AssemblyReference.cache
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\obj\Debug\net9.0\TRDS.Application.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\obj\Debug\net9.0\TRDS.Application.AssemblyInfoInputs.cache
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\obj\Debug\net9.0\TRDS.Application.AssemblyInfo.cs
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\obj\Debug\net9.0\TRDS.Application.csproj.CoreCompileInputs.cache
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\bin\Debug\net9.0\TRDS.Application.deps.json
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\bin\Debug\net9.0\TRDS.Application.dll
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\bin\Debug\net9.0\TRDS.Application.pdb
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\bin\Debug\net9.0\TRDS.Core.dll
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\bin\Debug\net9.0\TRDS.Shared.dll
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\bin\Debug\net9.0\TRDS.Core.pdb
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\bin\Debug\net9.0\TRDS.Shared.pdb
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\obj\Debug\net9.0\TRDS.App.76B8A044.Up2Date
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\obj\Debug\net9.0\TRDS.Application.dll
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\obj\Debug\net9.0\refint\TRDS.Application.dll
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\obj\Debug\net9.0\TRDS.Application.pdb
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Application\obj\Debug\net9.0\ref\TRDS.Application.dll

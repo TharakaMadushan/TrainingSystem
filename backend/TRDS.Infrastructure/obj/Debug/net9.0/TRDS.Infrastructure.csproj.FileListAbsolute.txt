@@ -1,0 +1,17 @@
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Infrastructure\bin\Debug\net9.0\TRDS.Infrastructure.deps.json
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Infrastructure\bin\Debug\net9.0\TRDS.Infrastructure.dll
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Infrastructure\bin\Debug\net9.0\TRDS.Infrastructure.pdb
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Infrastructure\bin\Debug\net9.0\TRDS.Core.dll
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Infrastructure\bin\Debug\net9.0\TRDS.Shared.dll
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Infrastructure\bin\Debug\net9.0\TRDS.Core.pdb
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Infrastructure\bin\Debug\net9.0\TRDS.Shared.pdb
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Infrastructure\obj\Debug\net9.0\TRDS.Infrastructure.csproj.AssemblyReference.cache
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Infrastructure\obj\Debug\net9.0\TRDS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Infrastructure\obj\Debug\net9.0\TRDS.Infrastructure.AssemblyInfoInputs.cache
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Infrastructure\obj\Debug\net9.0\TRDS.Infrastructure.AssemblyInfo.cs
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Infrastructure\obj\Debug\net9.0\TRDS.Infrastructure.csproj.CoreCompileInputs.cache
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Infrastructure\obj\Debug\net9.0\TRDS.Inf.2E9EA3AE.Up2Date
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Infrastructure\obj\Debug\net9.0\TRDS.Infrastructure.dll
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Infrastructure\obj\Debug\net9.0\refint\TRDS.Infrastructure.dll
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Infrastructure\obj\Debug\net9.0\TRDS.Infrastructure.pdb
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Infrastructure\obj\Debug\net9.0\ref\TRDS.Infrastructure.dll

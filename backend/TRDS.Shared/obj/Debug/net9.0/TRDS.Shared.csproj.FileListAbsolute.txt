@@ -1,0 +1,12 @@
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Shared\bin\Debug\net9.0\TRDS.Shared.deps.json
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Shared\bin\Debug\net9.0\TRDS.Shared.dll
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Shared\bin\Debug\net9.0\TRDS.Shared.pdb
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Shared\obj\Debug\net9.0\TRDS.Shared.csproj.AssemblyReference.cache
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Shared\obj\Debug\net9.0\TRDS.Shared.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Shared\obj\Debug\net9.0\TRDS.Shared.AssemblyInfoInputs.cache
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Shared\obj\Debug\net9.0\TRDS.Shared.AssemblyInfo.cs
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Shared\obj\Debug\net9.0\TRDS.Shared.csproj.CoreCompileInputs.cache
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Shared\obj\Debug\net9.0\TRDS.Shared.dll
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Shared\obj\Debug\net9.0\refint\TRDS.Shared.dll
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Shared\obj\Debug\net9.0\TRDS.Shared.pdb
+Z:\Source\New Attendance Solution - Testing\TRDS\backend\TRDS.Shared\obj\Debug\net9.0\ref\TRDS.Shared.dll
